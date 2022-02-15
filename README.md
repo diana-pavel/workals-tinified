@@ -14,3 +14,4 @@ And then, to run the server
 ```
 rails s
 ```
+finally fixed!!
