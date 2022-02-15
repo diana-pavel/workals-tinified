@@ -1,2 +1,10 @@
 @import "bootstrap";
+@import "components/navbar";
+@import "config/colors";
+
+body {
+  padding-left: 10%;
+  padding-right: 10%;
+  //background-color: lightblue;
+}
 
