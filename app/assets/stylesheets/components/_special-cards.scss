@@ -1,0 +1,34 @@
+.card-photo {
+  overflow: hidden;
+  //height: 500px;
+  //width: 100px;
+  background: transparent;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-photo img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+
+.div-home {
+  padding: 10%;
+  background-color: black;
+}
+
+.div-white-home {
+  padding: 10%;
+}
+
+.grid {
+   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}

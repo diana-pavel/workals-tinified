@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_scope :user do
-    # Redirests signing out users back to sign-in
+    # Redirects signing out users back to sign-in
     get "users", to: "devise/sessions#new"
   end
+  root 'pages#index'
 
   devise_for :users
 
-  root 'pages#index'
 end
