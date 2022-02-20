@@ -5,4 +5,4 @@ Companies can:
 - create a profile, add their information, add their engineering practices, and their hiring practices, as well as Mentors (software developers who are already working for them and who can decide when they are available to communicate with the wider industry).
 Users can:  
 
--create a profile, choose whether to be mentors or mentees, set goals, and set their availability and visibility.
+- create a profile, choose whether to be mentors or mentees, set goals, and set their availability and visibility.
