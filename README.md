@@ -1,17 +1,4 @@
-# Rails 7 Devise Template
-A template available for public use to launch a new Rails 7 app with devise pre-configured. This setup presumes you want to authenticate users under the name `users`, which seems like a reasonable assumption for most apps.
-
-This repo is a companion to the article [Devise Auth Setup in Rails 7](https://medium.com/@nickfrancisci/devise-auth-setup-in-rails-7-44240aaed4be). 
-
-## Setup
-Fork your own project from the template. Clone it. Then, all you have to do to get started is:
-```
-bundle install
-rake db:migrate
-```
-
-And then, to run the server
-```
-rails s
-```
-finally fixed!!
+A much smaller version of Workals.com, with a focus on search and tagging.
+Workals' aim is to help software developers (particularly early-career ones) to manage their careers better. This can be achieved with the help of companies who are looking to improve their employer brand, and mentors.
+Companies can: - create a profile, add their information, add their engineering practices, and their hiring practices, as well as Mentors (software developers who are already working for them and who can decide when they are available to communicate with the wider industry).
+Users can:  create a profile, choose whether to be mentors or mentees, set goals, and set their availability and visibility.
