@@ -18,11 +18,16 @@
 
 .div-home {
   padding: 10%;
-  background-color: black;
+  background-color: #0D0C0C;
 }
 
 .div-white-home {
   padding: 10%;
+}
+
+.div-pink {
+  padding: 10%;
+  background-color: #E3C2E0;
 }
 
 .grid {
@@ -32,3 +37,8 @@
   padding-left: 16px;
   padding-right: 16px;
 }
+
+.card-pink, .card-white, .card-green {
+  box-shadow: 5px 5px 5px lightblue;
+}
+
