@@ -1,0 +1,57 @@
+.btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  //background-color: $sea;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-family:'Source Code Pro', monospace;
+  text-transform: none;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.btn-black {
+ color: white;
+  border: 1px solid #4A4A4A;
+  background-color: black;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-family:'Source Code Pro', monospace;
+  text-transform: none;
+}
+
+.btn-black:hover {
+  color: #E3C2E0;
+}
+
+.btn-fucsia {
+  color: black;
+  //border: 1px solid #4A4A4A;
+  background-color: $fucsia;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.btn {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}

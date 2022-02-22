@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&family=Work+Sans:wght@400;900&display=swap');
+
+$home: 'Source Code Pro', monospace;
+$headers: 'Work Sans', sans-serif;
+
+
+h1 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 900;
+  box-shadow: 10px 10px 5px #CCE4C4;
+}
+
+
+h2, h3, h4, h5 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+p {
+font-family: 'Source Code Pro', monospace;
+}
