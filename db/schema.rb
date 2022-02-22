@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_15_140423) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_22_142040) do
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_companies_on_user_id"
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.string "goal"
+    t.text "description"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -23,8 +40,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_15_140423) do
     t.string "uid"
     t.string "name"
     t.string "image"
+    t.boolean "admin"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "companies", "users"
+  add_foreign_key "goals", "users"
 end

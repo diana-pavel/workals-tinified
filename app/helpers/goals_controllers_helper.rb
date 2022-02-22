@@ -1,0 +1,2 @@
+module GoalsControllersHelper
+end
