@@ -51,6 +51,10 @@ gem "bootsnap", require: false
 
 gem "devise", "~> 4.8"
 
+# Welcome emails
+
+gem 'sendgrid-ruby'
+
 # Pundit gem -> Authorization
 gem 'pundit'
 

@@ -20,6 +20,18 @@ skip_before_action :verify_authenticity_token
     end
   end
 
+  def create
+    # Create the user from params
+    @user = User.new(user_params)
+    if @user.save
+      # Deliver the signup email
+      UserNotifierMailer.send_signup_email(@user).deliver
+      redirect_to(@user, :notice => 'User created')
+    else
+      render :action => 'new'
+    end
+  end
+
   def update
     @user = current_user
     authorize @user

@@ -5,4 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
  has_many :goals, dependent: :destroy
+
+
+
+ protected
+  def confirmation_required?
+    false
+  end
+
 end
