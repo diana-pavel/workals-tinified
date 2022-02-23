@@ -7,4 +7,12 @@ class UserNotifierMailer < ApplicationMailer
     mail( :to => @user.email,
     :subject => 'Welcome to Workals' )
   end
+
+  def send_email(user)
+    @user = user
+
+    mail(:to => @user.email,
+         :subject => "Password Reset",
+         :body => "Copy the verification code: #")
+  end
 end

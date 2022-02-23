@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/users/sign_out' => 'devise/sessions#destroy'
     end
 
+   post "password/forgot", to: "passwords#forgot"
+
   resources :companies
 
   resources :goals do
