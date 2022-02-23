@@ -108,7 +108,7 @@ GEM
       activesupport (>= 5.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
-    importmap-rails (1.0.2)
+    importmap-rails (1.0.3)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.5.11)
@@ -145,11 +145,12 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.13.1-x86_64-darwin)
+    nokogiri (1.13.3-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.1-x86_64-linux)
+    nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.3.3)
     popper_js (2.9.3)
     public_suffix (4.0.6)
     puma (5.6.2)
@@ -218,8 +219,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
-    stimulus-rails (1.0.2)
+    stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.1)
     thor (1.2.1)
@@ -260,6 +260,7 @@ DEPENDENCIES
   devise (~> 4.8)
   importmap-rails
   jbuilder
+  pg (~> 1.1)
   puma (~> 5.0)
   pundit
   rails (~> 7.0.1)
@@ -268,7 +269,6 @@ DEPENDENCIES
   selenium-webdriver
   sendgrid-ruby
   sprockets-rails
-  sqlite3 (~> 1.4)
   stimulus-rails
   turbo-rails (~> 1.0.0)
   tzinfo-data
