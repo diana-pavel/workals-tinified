@@ -24,13 +24,13 @@ class ApplicationController < ActionController::Base
     @resource ||= User.new
   end
 
-  def after_sign_in_path_for(resource_or_scope)
-    if resource.sign_in_count == 1
-      edit_user_path(current_user)
-    else
-      my_profile_path
-    end
-  end
+  #def after_sign_in_path_for(resource_or_scope)
+    #if resource.sign_in_count == 1
+      #edit_user_path(current_user)
+    #else
+      #my_profile_path
+    #end
+  #end
 
   def resource_class
     User

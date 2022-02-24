@@ -4,6 +4,7 @@ skip_after_action :verify_policy_scoped, :only => [:index, :all]
 
  def all
     @goals = Goal.all
+    authorize @goals
 
   end
 
@@ -29,18 +30,9 @@ skip_after_action :verify_policy_scoped, :only => [:index, :all]
 
   # POST /companies or /companies.json
   def create
-      @goal = current_user.goals.create(goal_params)
+    @goal = current_user.goals.create(goal_params)
     authorize @goal
-
-    respond_to do |format|
-      if @goal.save
-        format.html { redirect_to goal_url(@goal), notice: "Goal was successfully created." }
-        format.json { render :show, status: :created, location: @goal }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @goal.errors, status: :unprocessable_entity }
-      end
-    end
+    redirect_to goals_path
   end
 
   # PATCH/PUT /companies/1 or /companies/1.json
@@ -74,6 +66,6 @@ skip_after_action :verify_policy_scoped, :only => [:index, :all]
 
     # Only allow a list of trusted parameters through.
     def goal_params
-      params.require(:goal).permit(:goal, :description)
+      params.require(:goal).permit(:goal, :description, :user_id)
     end
 end
