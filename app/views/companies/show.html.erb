@@ -3,6 +3,8 @@
 <%= render @company %>
 
 <div>
+  #if current user admin add all these buttons, if not, then not. Will need to implement user roles
+
   <%= link_to "Edit this company", edit_company_path(@company) %> |
   <%= link_to "Back to companies", companies_path %>
   <%= button_to "Delete this company", @company, method: :delete %>

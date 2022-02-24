@@ -1,7 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
-skip_after_action :verify_policy_scoped, :only => [:index, :show]
-
+  skip_after_action :verify_policy_scoped, :only => [:index, :show]
   # GET /companies or /companies.json
 
   def index
@@ -11,7 +10,7 @@ skip_after_action :verify_policy_scoped, :only => [:index, :show]
   # GET /companies/1 or /companies/1.json
   def show
  @company = Company.find(params[:id])
-  authorize @company
+    authorize @company
   end
 
   # GET /companies/new
@@ -23,6 +22,8 @@ skip_after_action :verify_policy_scoped, :only => [:index, :show]
 
   # GET /companies/1/edit
   def edit
+    @company = current_user.companies.find(params[:id])
+    authorize @company
   end
 
   # POST /companies or /companies.json
@@ -34,6 +35,8 @@ skip_after_action :verify_policy_scoped, :only => [:index, :show]
 
   # PATCH/PUT /companies/1 or /companies/1.json
   def update
+    @company = current_user.companies.find(params[:id])
+    authorize @company
     respond_to do |format|
       if @company.update(company_params)
         format.html { redirect_to company_url(@company), notice: "Company was successfully updated." }
@@ -47,6 +50,8 @@ skip_after_action :verify_policy_scoped, :only => [:index, :show]
 
   # DELETE /companies/1 or /companies/1.json
   def destroy
+    @company = Company.find(params[:id])
+    authorize @company
     @company.destroy
 
     respond_to do |format|
@@ -58,11 +63,8 @@ skip_after_action :verify_policy_scoped, :only => [:index, :show]
   private
 
     # Only allow a list of trusted parameters through.
-   def set_company
-   @company = Company.find(params[:id])
-   end
 
     def company_params
-      params.require(:company).permit(:name, :user_id, :title, :link)
+      params.require(:company).permit(:name, :title, :link)
     end
 end
