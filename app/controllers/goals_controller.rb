@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
 before_action :authenticate_user!
-skip_after_action :verify_policy_scoped, :only => :index
+skip_after_action :verify_policy_scoped, :only => [:index, :all]
 
  def all
     @goals = Goal.all
@@ -12,6 +12,8 @@ skip_after_action :verify_policy_scoped, :only => :index
   end
 
   def show
+     @goal = Goal.find(params[:id])
+    authorize @goal
   end
 
   # GET /companies/new
@@ -72,6 +74,6 @@ skip_after_action :verify_policy_scoped, :only => :index
 
     # Only allow a list of trusted parameters through.
     def goal_params
-      params.require(:goal).permit(:goal, :description, :user_id)
+      params.require(:goal).permit(:goal, :description)
     end
 end
