@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get "users", to: "devise/sessions#new"
   end
   root 'pages#index'
-  get '/companies', to: 'pages#comp', as: 'companies'
+  get '/landing', to: 'pages#landing', as: 'landing'
 
   devise_for :users
  devise_scope :user do

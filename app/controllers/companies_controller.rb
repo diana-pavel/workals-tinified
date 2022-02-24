@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except:  [:index, :show, :landing]
+  skip_after_action :verify_policy_scoped, :only => [:index, :show]
   # GET /companies or /companies.json
 
   def index
@@ -9,11 +9,14 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1 or /companies/1.json
   def show
+ @company = Company.find(params[:id])
+    authorize @company
   end
 
   # GET /companies/new
   def new
     @company = Company.new
+    authorize @company
   end
 
   # GET /companies/1/edit
@@ -21,18 +24,10 @@ class CompaniesController < ApplicationController
   end
 
   # POST /companies or /companies.json
-  def create
-    @company = Company.new(company_params)
-
-    respond_to do |format|
-      if @company.save
-        format.html { redirect_to company_url(@company), notice: "Company was successfully created." }
-        format.json { render :show, status: :created, location: @company }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
-      end
-    end
+   def create
+    @company = current_user.companies.create(company_params)
+    authorize @company
+    redirect_to company_path
   end
 
   # PATCH/PUT /companies/1 or /companies/1.json
@@ -65,6 +60,10 @@ class CompaniesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
+   def set_company
+   @company = Company.find(params[:id])
+   end
+
     def company_params
       params.require(:company).permit(:name, :user_id, :title, :link)
     end
