@@ -1,7 +1,8 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except:  [:index, :show]
+  before_action :authenticate_user!, except:  [:index, :show, :landing]
   # GET /companies or /companies.json
+
   def index
     @companies = Company.all
   end
