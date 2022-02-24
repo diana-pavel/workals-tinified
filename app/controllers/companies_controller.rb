@@ -30,7 +30,7 @@ class CompaniesController < ApplicationController
    def create
     @company = current_user.companies.create(company_params)
     authorize @company
-    redirect_to company_path
+    redirect_to companies_path
   end
 
   # PATCH/PUT /companies/1 or /companies/1.json
@@ -55,7 +55,7 @@ class CompaniesController < ApplicationController
     @company.destroy
 
     respond_to do |format|
-      format.html { redirect_to companies_url, notice: "Company was successfully deleted." }
+      format.html { redirect_to companies_url }
       format.json { head :no_content }
     end
   end
@@ -65,6 +65,6 @@ class CompaniesController < ApplicationController
     # Only allow a list of trusted parameters through.
 
     def company_params
-      params.require(:company).permit(:name, :title, :link)
+      params.require(:company).permit(:name, :id, :title, :link)
     end
 end
