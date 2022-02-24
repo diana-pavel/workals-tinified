@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
-  before_action :set_company, only: %i[ show edit update destroy ]
-  skip_after_action :verify_policy_scoped, :only => [:index, :show]
+  before_action :authenticate_user!
+skip_after_action :verify_policy_scoped, :only => [:index, :show]
+
   # GET /companies or /companies.json
 
   def index
@@ -10,11 +11,12 @@ class CompaniesController < ApplicationController
   # GET /companies/1 or /companies/1.json
   def show
  @company = Company.find(params[:id])
-    authorize @company
+  authorize @company
   end
 
   # GET /companies/new
   def new
+    @user = current_user
     @company = Company.new
     authorize @company
   end
@@ -54,10 +56,6 @@ class CompaniesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_company
-      @company = Company.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
    def set_company
