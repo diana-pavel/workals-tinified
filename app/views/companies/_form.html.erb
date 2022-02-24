@@ -1,6 +1,6 @@
 <%= form_with(model: company) do |form| %>
   <% if company.errors.any? %>
-    <div style="color: red">
+    <div style="color: none">
       <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
 
       <ul>
