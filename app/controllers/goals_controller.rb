@@ -1,7 +1,14 @@
 class GoalsController < ApplicationController
+before_action :authenticate_user!
+#skip_after_action :verify_policy_scoped, :only => :index
+
+ def all
+    @goals = Goal.all
+
+  end
 
  def index
-    @goals = Goal.all
+    @goals = current_user.goals
   end
 
   def show
@@ -9,7 +16,9 @@ class GoalsController < ApplicationController
 
   # GET /companies/new
   def new
+    @user = current_user
     @goal = Goal.new
+    authorize @goal
   end
 
   # GET /companies/1/edit
@@ -18,7 +27,8 @@ class GoalsController < ApplicationController
 
   # POST /companies or /companies.json
   def create
-    @goal = Goal.new(goal_params)
+      @goal = current_user.goals.create(goal_params)
+    authorize @goal
 
     respond_to do |format|
       if @goal.save
