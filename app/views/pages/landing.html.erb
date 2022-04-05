@@ -1,25 +1,55 @@
 <head>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
+
 <body>
-<div class="row justify-content-evenly">
+  <nav class="navbar navbar-light" style="background-color: #E7D1FF;">
+  < Navbar content -->
+</nav>
   <div class="div-lilac">
+<div class="row justify-content-evenly">
   <div class="col-6">
-        <h6 class="text-orange">
-            <ul> BUILD YOUR EMPLOYER BRAND </h6>
-        <ul> <h6 class="text-black"> DRIVE REFERRALS </ul> </h6>
-         <h6> <ul> <%= link_to "JOIN Waitlist", "landing", class: "btn btn-orange" %> </ul> </h6> <ul>
-    </div>
+    <h6 class="text-orange">
+      <ul> BUILD YOUR EMPLOYER BRAND </h6> </ul>
+      <ul> <h6 class="text-white"> & <%= link_to "JOIN Beta", "landing", class: "btn btn-white" %> </ul> </h6>
+      <ul> <h6 class="text-black"> DRIVE REFERRALS </ul> </h6>
+       </ul> </h6> </div>
 
-        <div class="col-6">
-          <div class="card-photo">
+<div class="col-6">
+  <br>
+  <br>
 
-      <a href="landing.png"> </a>
-          </div>
-        </h6>
-      </div>
+<div class="row justify-content-evenly">
+<div class="card text-dark bg-white mb-3" style="max-width: 18rem;">
+<h3 class="card-header">BE SEEN</h3>
+  <div class="card-body">
+    <h3 class="text-orange">Incentivise your team to talk about their work and distribute it with one click.</h3>
   </div>
+</div>
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <h3 class="card-header">GET REFERRALS</h3>
+  <div class="card-body">
+    <h3 class="text-orange"> Internal and external, local and global, wherever you're looking to hire. </h3>
   </div>
- </div>
+</div>
+<div class="card text-white bg-dark mb-3" style="max-width: 24rem;">
+  <h3 class="card-header text-orange">BUILD COMMUNITY</h3>
+
+  <div class="card-body">
+    <h3 class="text-white"> Join events, 1-2-1s and find mentoring opportunities to attract future team members.</h3>
+  </div>
+</div>
+  <div class="card text-black bg-white mb-3" style="max-width: 30rem;">
+  <h3 class="card-header text-orange">MAKE CULTURE YOUR USP</h3>
+  <div class="card-body">
+    <h3 class="text-black">Showcase the things you care about to attract the right teammates.</h3>
+
+  </div>
+</li>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="row justify-content-evenly">
@@ -81,6 +111,10 @@
 
 </div>
 <script>
-
+  ScrollReveal().reveal('.card text-dark bg-white mb-4');
+  ScrollReveal().reveal('.card-white',{ delay: 300 });
+  ScrollReveal().reveal('.card-green',{ delay: 500 });
+  ScrollReveal().reveal('.card-yellow',{ delay: 600 });
+  ScrollReveal({ reset: true });
 </script>
 </body>
