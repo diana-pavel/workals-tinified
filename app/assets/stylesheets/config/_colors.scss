@@ -19,3 +19,12 @@ $fucsia: #ff00ff;
 .text-orange {
   color: #F9A620;
 }
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  box-shadow: 5px 5px 5px orange;
+  color: orange;
+}
